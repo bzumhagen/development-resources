@@ -1,0 +1,103 @@
+[user]
+	name = Ben Zumhagen
+	email = ben.zumhagen@relativity.com
+[core]
+	autocrlf = false
+	longpaths = true
+	quotepath = false
+  hooksPath = "C:\\SourceCode\\utilities\\git\\hooks"
+	editor = vim
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+[grep]
+    lineNumber = true
+[commit]
+    template = "C:\\SourceCode\\utilities\\git\\.gitmessage"
+[alias]
+  a = add
+  aa = add -A
+  au = add -u
+  aaa = !git add -u :/ && git add .
+
+  b = branch
+  bl = branch --list
+  bd = branch -d
+  bdf = branch -D
+	bn = rev-parse --abbrev-ref HEAD
+  co = checkout
+  cob = checkout -b
+  com = checkout master
+
+  c = commit
+  ca = commit --amend
+  cl = clean -i
+  cm = commit -m
+  cam = commit -am
+  cnov = commit --no-verify
+  canov = commit --amend --no-verify
+  cane = commit --amend --no-edit
+  canove = commit --amend --no-edit --no-verify
+
+  d = diff
+  dc = diff --cached
+  ds = diff --stat
+  ds1 = show --stat HEAD
+  dt = difftool
+  dw = diff --color-words
+
+  l = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) [%an%C(reset)] %C(white)%s%C(reset) %C(dim white)%C(bold yellow)%d%C(reset)' -10
+  ln = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) [%an%C(reset)] %C(white)%s%C(reset) %C(dim white)%C(bold yellow)%d%C(reset)'
+  l1 = log -1
+  lg = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) [%an%C(reset)] %C(white)%s%C(reset) %C(dim white)%C(bold yellow)%d%C(reset)'
+  lga = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) [%an%C(reset)] %C(white)%s%C(reset) %C(dim white)%C(bold yellow)%d%C(reset)' --all
+  lgag = !git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) [%an%C(reset)] %C(white)%s%C(reset) %C(dim white)%C(bold yellow)%d%C(reset)' --all | grep
+  lgg = !git log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) [%an%C(reset)] %C(white)%s%C(reset) %C(dim white)%C(bold yellow)%d%C(reset)' | grep
+  ll = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) [%an%C(reset)] %C(white)%s%C(reset) %C(dim white)%C(bold yellow)%d%C(reset)' --all -5
+
+  s = status
+  sl = stash list
+  sp = stash pop
+  st = stash
+
+  p = pull
+  pr = pull --rebase
+  prs = pull --rebase --autostash
+  pushup = "!git push --set-upstream origin \"$(git bn)\""
+
+  purge = clean -fdx
+
+  r = rebase
+  ra = rebase --abort
+  rc = rebase --continue
+  ri = rebase -i
+  rd = "!currentBranch=\"$(git bn)\"; git checkout develop; git pr; git checkout $currentBranch; git rebase develop"
+  rt = "!f() { currentBranch=\"$(git bn)\"; git checkout $1; git pr; git checkout $currentBranch; git rebase $1; }; f"
+
+  rev = review
+  revd = review -d
+  revf = review -f
+
+  rs = reset --soft
+  rm = reset --mixed
+  rh = reset --hard
+  rhom = reset --hard origin/master
+  rhoc = "!currentBranch=\"$(git bn)\"; git reset --hard origin/$currentBranch"
+  rhum = "fetch upstream; git rh upstream/master"
+	rim = "!currentBranch=\"$(git bn)\"; masterIndex=\"$(git merge-base master $currentBranch)\"; git reset $masterIndex"
+
+  wipe = reset --hard HEAD
+
+  submit = "!git au; git c; git push"
+  submitup = "!git au; git c; git pushup"
+
+  redo = "!git au; git cane; git push -f"
+[merge]
+	tool = meld
+[mergetool "meld"]
+	path = C:\\Program Files (x86)\\Meld\\Meld.exe
+[diff]
+	tool = meld
+[credential]
+	helper = manager-core
