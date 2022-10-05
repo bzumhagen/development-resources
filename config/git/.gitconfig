@@ -1,20 +1,18 @@
 [user]
-	name = Ben Zumhagen
-	email = ben.zumhagen@relativity.com
+  name = Benjamin Zumhagen
+  email = benjamin.zumhagen@blueowl.xyz
 [core]
-	autocrlf = false
-	longpaths = true
-	quotepath = false
-  hooksPath = "C:\\SourceCode\\utilities\\git\\hooks"
-	editor = vim
+  autocrlf = false
+  longpaths = true
+  quotepath = false
+  hooksPath = "~/Source/development-resources/config/git/hooks"
+  editor = vim
 [color]
-    branch = auto
-    diff = auto
-    status = auto
+  branch = auto
+  diff = auto
+  status = auto
 [grep]
-    lineNumber = true
-[commit]
-    template = "C:\\SourceCode\\utilities\\git\\.gitmessage"
+  lineNumber = true
 [alias]
   a = add
   aa = add -A
@@ -93,11 +91,12 @@
   submitup = "!git au; git c; git pushup"
 
   redo = "!git au; git cane; git push -f"
-[merge]
-	tool = meld
-[mergetool "meld"]
-	path = C:\\Program Files (x86)\\Meld\\Meld.exe
-[diff]
-	tool = meld
 [credential]
-	helper = manager-core
+  helper = manager-core
+[url "git@github.com:"]
+  insteadOf = https://github.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
