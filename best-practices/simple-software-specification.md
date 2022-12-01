@@ -22,6 +22,7 @@ As a developer, I can simply;
 - [ ] Release changes to production without downtime.
 - [ ] Determine what changed between two versions of my application.
 - [ ] Catch bugs before they are released.
+- [ ] Catch known security vulnerabilities before they are released.
 - [ ] Rotate secrets automatically  
 
 User
@@ -33,6 +34,7 @@ As a user, I can simply;
 - [ ] Understand what functionality the software provides.
 - [ ] Request changes and improvements.
 - [ ] Report issues.
+- [ ] Trust the software is secure.
 
 
 
@@ -66,10 +68,15 @@ Developer:
 
 
 *   Catch bugs before they are released.
-    - [ ] Have comprehensive automated testing (L0-L3) performed before every release.
+    - [ ] Have comprehensive automated testing (small-large) performed before every release.
     - [ ] Use a canary during deployment to allow rollbacks in case of issues.
     - [ ] Don't release changes without peer review.
     - [ ] Follow best practices for code quality/maintainability.
+
+
+*   Catch known security vulnerabilities before they are released.
+    - [ ] Scan code using a security tool before release.
+    - [ ] Perform threat modeling on system changes.
 
 
 *   Rotate secrets automatically .
@@ -98,3 +105,8 @@ User:
 *   Report issues.
     - [ ] Issue reporting communication channel exists.
     - [ ] Issues are responded to within two days.
+
+
+*   Trust the software is secure.
+    - [ ] Interactions are authorized and authenticated.
+    - [ ] Communication is encrypted using industry standards.
