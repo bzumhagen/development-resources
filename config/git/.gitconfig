@@ -23,7 +23,7 @@
   bl = branch --list
   bd = branch -d
   bdf = branch -D
-	bn = rev-parse --abbrev-ref HEAD
+  bn = rev-parse --abbrev-ref HEAD
   co = checkout
   cob = checkout -b
   com = checkout master
@@ -84,6 +84,7 @@
   rhoc = "!currentBranch=\"$(git bn)\"; git reset --hard origin/$currentBranch"
   rhum = "fetch upstream; git rh upstream/master"
 	rim = "!currentBranch=\"$(git bn)\"; masterIndex=\"$(git merge-base master $currentBranch)\"; git reset $masterIndex"
+	rima = "!currentBranch=\"$(git bn)\"; mainIndex=\"$(git merge-base main $currentBranch)\"; git reset $mainIndex"
 
   wipe = reset --hard HEAD
 
@@ -91,6 +92,8 @@
   submitup = "!git au; git c; git pushup"
 
   redo = "!git au; git cane; git push -f"
+  unstage = restore --staged
+	versions = !git tag | tr - \\~ | sort -V | tr \\~ -
 [credential]
   helper = manager-core
 [url "git@github.com:"]
